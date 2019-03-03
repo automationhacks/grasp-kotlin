@@ -2,7 +2,7 @@ var a = 5
 println(5)
 
 var b = 6 // Can change
-println( a + b)
+println(a + b)
 
 val c = 7 // Does not change
 // error: val cannot be reassigned
@@ -14,13 +14,13 @@ println(d)
 val e = d * 5 / 2
 println(e)
 
-var someByte : Byte = 1
+var someByte: Byte = 1
 // Implicit conversion does not happen for number types like Byte -> Int, Int -> Long
 // error: type mismatch: inferred type is Byte.Companion but Int was expected
 //var someInt : Int = Byte
 
 // In such cases we have to explicitly convert the output
-var anotherInt : Int = someByte.toInt()
+var anotherInt: Int = someByte.toInt()
 println("Look: I got converted to Int " + anotherInt)
 
 // Kotlin handles nullability by making sure data structures cannot be null by default
@@ -31,7 +31,7 @@ println("Look: I got converted to Int " + anotherInt)
 //var fish : String = null
 
 // ? operator denotes if something can be null
-var fishes : List<String?>? = listOf(null, null)
+var fishes: List<String?>? = listOf(null, null)
 println(fishes)
 
 /*
@@ -64,6 +64,6 @@ println("Color of the rainbow: " + rainbowColor)
 println("What color is black? " + blackColor)
 
 //rainbowColor = null // error: null can not be a value of a non-null type String
-var greenColor : String? = null
-var blueColor : String = null
+var greenColor: String? = null
+//var blueColor: String = null
 
