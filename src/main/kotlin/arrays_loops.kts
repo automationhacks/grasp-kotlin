@@ -36,8 +36,10 @@ var strList: MutableList<String> = mutableListOf<String>()
 
 println("Now adding nos to strList")
 for (number in numbers) {
-    strList.add(numbers.toString())
+    strList.add(number.toString())
 }
+
+println(strList)
 
 /*
 How can you use a for loop to create (a list of) the numbers between 1 and 100 that are divisible by 7?
