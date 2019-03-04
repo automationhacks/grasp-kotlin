@@ -1,4 +1,4 @@
-package main.kotlin
+package main.kotlin.functions
 
 /**
  * Exercise: Greetings, Kotlin
