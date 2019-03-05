@@ -28,23 +28,30 @@ Let's go back to your spices. Make Spice an abstract class, and then create some
  */
 
 interface SpiceColor {
-    val color : String
+    val color: Color
+}
+
+enum class Color(val rgb: Int) {
+    RED(0xFF0000),
+    GREEN(0x00FF00),
+    BLUE(0x0000FF),
+    YELLOW(0xFFFF00);
 }
 
 // object keyword is used to make a class as singleton in kotlin
 object YellowSpiceColor : SpiceColor {
-    override val color: String = "Yellow"
+    override val color: Color = Color.YELLOW
 }
 
 // Below are examples of abstract classes
-abstract class BasicSpice {
+sealed class BasicSpice {
     abstract val name: String
-    val color : SpiceColor = YellowSpiceColor
+    val color: SpiceColor = YellowSpiceColor
 
     abstract fun prepareSpice()
 }
 
-class Curry(val name: String) : Grinder, SpiceColor by YellowSpiceColor  {
+class Curry(val name: String) : Grinder, SpiceColor by YellowSpiceColor {
     override fun grind() {
         println("Oh yeah. Grinded.")
     }
@@ -55,7 +62,7 @@ interface Grinder {
     fun grind()
 }
 
-fun main(args : Array<String>) {
+fun main(args: Array<String>) {
     val curry = Curry("Sambhar")
     println("The curry has color of ${curry.color}")
 
