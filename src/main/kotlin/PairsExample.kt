@@ -1,6 +1,6 @@
 package main.kotlin
 
-import com.sun.org.apache.xpath.internal.operations.Bool
+import java.util.*
 
 /*
 Let's go through an example of getting information about a book in the format of a Pair.
@@ -24,8 +24,31 @@ Practice Time
  */
 const val MAX_BOOKS = 3
 
+/*
+It can be useful to know the weight of a book, for example, for shipping.
+The weight of a book can change because sometimes pages get torn, and the page count changes.
+While calculating the weight could be defined as a method, it’s more like a helper function.
+Besides, it would hurt a book's feelings to have a method that tears up its pages.
 
-class Book(val title: String, val author: String, val year: String, val hasBooks: Int = 0) {
+    Add a mutable property pages to Book.
+    Create an extension function on Book that returns the weight of a book as the page count multiplied by 1.5 grams.
+    Create another extension, tornPages(), that takes the number of torn pages as an argument and changes the page count of the book.
+    Write a class Puppy with a method playWithBook() that takes a book as an argument, and removes a random number of pages from the book.
+    Create a puppy and give it a book to play with, until there are no more pages.
+
+Note: If you don’t want to give your puppy a book, then create a puzzle toy class and fill it with treats.
+
+ */
+class Puppy {
+    fun playWithBook(book : Book) {
+        var random = Random()
+        var toRemove = random.nextInt(book.pages)
+        book.pages -= toRemove
+    }
+}
+
+
+class Book(val title: String, val author: String, val year: String, val hasBooks: Int = 0, var pages : Int = 100) {
     companion object {
         const val BASE_URL = "http://www.foo.com"
     }
@@ -47,6 +70,18 @@ class Book(val title: String, val author: String, val year: String, val hasBooks
     }
 }
 
+// Extension function
+// Can be called outside the class and has access only to public variables
+// Typically used to defined helper methods on a class
+fun Book.getWeight() : Double {
+    return pages * 1.5
+}
+
+// Another extension function
+fun Book.getTornPages(tornPages : Int) {
+    this.pages -= tornPages
+}
+
 fun main(args: Array<String>) {
     val aBook = Book("Clean code", "RC Martin", "2008")
 
@@ -56,4 +91,7 @@ fun main(args: Array<String>) {
     val (title, author, year) = aBook.getAllBookDetails()
     println("Here is your book $title written by $author in $year")
 
+    val puppy = Puppy()
+    puppy.playWithBook(aBook)
+    println("No of pages left after puppy played is: ${aBook.pages}")
 }
