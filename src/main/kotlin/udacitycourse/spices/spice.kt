@@ -1,4 +1,4 @@
-package main.kotlin.spices
+package main.kotlin.udacitycourse.spices
 
 /*
 Let's go back to your spices. Make Spice an abstract class, and then create some subclasses that are actual spices.

@@ -1,3 +1,5 @@
+package main.kotlin.udacitycourse
+
 var a = 5
 println(5)
 
@@ -51,7 +53,7 @@ val noOfAquariums = fishCount.div(30)
 println("Total no of aquariums used for " + noOfAquariums)
 
 /*
-Practice Time: Variables
+Practice Time: main.kotlin.udacitycourse.Variables
 Create a String variable rainbowColor, set its color value, then change it.
 Create a variable blackColor whose value cannot be changed once assigned. Try changing it anyway.
  */

@@ -1,4 +1,4 @@
-package main.kotlin.classes
+package main.kotlin.udacitycourse.classes
 
 /**
  * Let's talk about books for a moment, those heavy tomes of paper with printed letters.

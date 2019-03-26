@@ -1,4 +1,4 @@
-/*
+package main.kotlin.udacitycourse/*
 Practice Time
     Create three String variables for trout, haddock, and snapper.
     Use a String template to print whether you do or don't like to eat these kinds of fish.

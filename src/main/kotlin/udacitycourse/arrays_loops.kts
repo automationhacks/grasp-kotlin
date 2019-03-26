@@ -1,3 +1,5 @@
+package main.kotlin.udacitycourse
+
 import kotlin.math.pow
 
 /*

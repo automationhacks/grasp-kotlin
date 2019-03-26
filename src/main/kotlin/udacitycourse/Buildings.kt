@@ -1,4 +1,4 @@
-package main.kotlin.generics
+package main.kotlin.udacitycourse
 
 /*
 Let’s put this into practice using building materials and a building that needs certain amounts of those materials.
