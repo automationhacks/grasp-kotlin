@@ -1,4 +1,4 @@
-package main.kotlin.koans._3_lambdas
+package main.kotlin.koans._03_lambdas
 
 /*
 Lambda expression and anonymous functions are called function literals since they are not declared but passed

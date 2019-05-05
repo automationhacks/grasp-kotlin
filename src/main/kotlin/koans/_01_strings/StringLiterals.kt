@@ -1,4 +1,4 @@
-package main.kotlin.koans._1_strings
+package main.kotlin.koans._01_strings
 
 /*
 https://kotlinlang.org/docs/reference/basic-types.html#string-literals

@@ -1,4 +1,4 @@
-package main.kotlin.koans._2_defaultNamedArguments
+package main.kotlin.koans._02_defaultNamedArguments
 
 // CONCEPT 1:
 // Function in kotlin is defined with fun keyword
