@@ -1,6 +1,7 @@
 package main.kotlin.koans._03_lambdas
 
 /*
+Read from: https://kotlinlang.org/docs/reference/lambdas.html?_ga=2.247788483.553776541.1556815188-2114576280.1553576364#function-types
 Lambda expression and anonymous functions are called function literals since they are not declared but passed
 immediately as an expression
 
