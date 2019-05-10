@@ -1,4 +1,4 @@
-package main.kotlin.udacitycourse.functions
+package udacitycourse.functions
 
 fun main(args: Array<String>) {
     print("\nHow is the mood: ")

@@ -1,4 +1,4 @@
-package main.kotlin.experiments
+package experiments
 
 import java.text.SimpleDateFormat
 import java.util.*

@@ -1,4 +1,4 @@
-package main.kotlin.udacitycourse.classes
+package udacitycourse.classes
 
 /*
     Create a simple data class, SpiceContainer, that holds one spice.

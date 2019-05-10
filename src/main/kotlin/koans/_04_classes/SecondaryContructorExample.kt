@@ -1,4 +1,4 @@
-package main.kotlin.koans._04_classes
+package koans._04_classes
 
 // Reference: https://kotlinlang.org/docs/reference/classes.html?_ga=2.42613741.91107089.1557227061-2114576280.1553576364
 

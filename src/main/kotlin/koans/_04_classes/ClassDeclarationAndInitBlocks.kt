@@ -1,4 +1,4 @@
-package main.kotlin.koans._04_classes
+package koans._04_classes
 
 /**
 class declaration has keyword class followed by name and its header (type parameters and primary constructor)

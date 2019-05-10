@@ -1,4 +1,4 @@
-package main.kotlin.udacitycourse.collections
+package udacitycourse.collections
 
 /*
 One book is rarely alone, and one author rarely writes just one book.

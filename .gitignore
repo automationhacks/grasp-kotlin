@@ -23,5 +23,13 @@
 hs_err_pid*
 
 # IDE generated files
+*.iml
 *.idea/
 /out
+/build
+
+# Additional
+.gradle
+/local.properties
+.DS_Store
+/captures

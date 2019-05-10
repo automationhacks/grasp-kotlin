@@ -1,4 +1,4 @@
-package main.kotlin.udacitycourse
+package udacitycourse
 
 /**
  * Practice Time

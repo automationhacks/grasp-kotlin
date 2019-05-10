@@ -1,4 +1,4 @@
-package main.kotlin.udacitycourse.functions
+package udacitycourse.functions
 
 import java.util.*
 

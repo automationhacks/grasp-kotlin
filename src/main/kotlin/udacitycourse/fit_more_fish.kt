@@ -1,4 +1,4 @@
-package main.kotlin.udacitycourse
+package udacitycourse
 
 // Refer to Fit more fish problem in /resources/problems.md
 // This problem highlights use of default parameters in kotlin

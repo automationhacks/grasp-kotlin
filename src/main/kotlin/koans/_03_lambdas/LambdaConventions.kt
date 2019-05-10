@@ -1,4 +1,4 @@
-package main.kotlin.koans._03_lambdas
+package koans._03_lambdas
 
 
 /**

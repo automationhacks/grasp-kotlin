@@ -1,4 +1,4 @@
-package main.kotlin.experiments
+package experiments
 
 data class Foo(val name: String, val address : String)
 

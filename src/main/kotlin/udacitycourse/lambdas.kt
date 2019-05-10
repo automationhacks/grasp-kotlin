@@ -1,4 +1,4 @@
-package main.kotlin.udacitycourse
+package udacitycourse
 
 import java.lang.Math.random
 import java.util.*

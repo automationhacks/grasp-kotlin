@@ -1,4 +1,4 @@
-package main.kotlin.koans._02_defaultNamedArguments
+package koans._02_defaultNamedArguments
 
 // CONCEPT 1:
 // Function in kotlin is defined with fun keyword
@@ -28,10 +28,6 @@ open class Bar : Foo() {
 //        super.foobar(i)
 //    }
 
-    // override fun is redundant here.
-    override fun foobar(i: Int) {
-        super.foobar(i)
-    }
 }
 
 /*

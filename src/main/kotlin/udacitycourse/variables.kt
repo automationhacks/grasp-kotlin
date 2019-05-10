@@ -1,4 +1,4 @@
-package main.kotlin.udacitycourse
+package udacitycourse
 
 fun main(args: Array<String>) {
     var a = 5
@@ -54,7 +54,7 @@ Bonus question: What is special about all the numbers of fish?
     println("Total no of aquariums used for " + noOfAquariums)
 
 /*
-Practice Time: main.kotlin.udacitycourse.Variables
+Practice Time: udacitycourse.Variables
 Create a String variable rainbowColor, set its color value, then change it.
 Create a variable blackColor whose value cannot be changed once assigned. Try changing it anyway.
  */

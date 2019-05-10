@@ -1,4 +1,4 @@
-package main.kotlin.koans._02_defaultNamedArguments
+package koans._02_defaultNamedArguments
 
 /**
  * In kotlin, we can pass variable no of arguments by using "spread" operator (*) and then mention

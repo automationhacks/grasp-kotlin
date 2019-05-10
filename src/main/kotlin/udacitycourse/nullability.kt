@@ -1,11 +1,11 @@
-package main.kotlin.udacitycourse
+package udacitycourse
 
 fun main(args: Array<String>) {
 // Link to refer constructs to handle nullibility in kotlin
 // https://kotlinlang.org/docs/reference/null-safety.html
 
 /*
-Practice Time: main.kotlin.udacitycourse.Nullability/Lists
+Practice Time: udacitycourse.Nullability/Lists
 Create a list with two elements that are null; do it in two different ways.
 Next, create a list where the list is null.
  */
