@@ -1,16 +1,12 @@
 package _03_functions
 
 
-class StringUtils {
-    fun getFirstWord(word: String, separator: String): String {
-        return word.split(separator)[0]
-    }
-
-    fun getFirstWord(word: String) = getFirstWord(word, " ")
+fun getFirstWord(word: String, separator: String = " "): String {
+    return word.split(separator)[0]
 }
 
-fun main(args: Array<String>) {
-    val first = StringUtils().getFirstWord("Jane Doe")
+fun main() {
+    val first = getFirstWord("Jane,Doe", separator = ",")
     println("First word: $first")
 }
 
