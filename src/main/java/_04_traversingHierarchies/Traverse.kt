@@ -21,21 +21,25 @@ fun main(args: Array<String>) {
 }
 
 fun Element.extractText(): String {
-    return extractText(this, StringBuilder()).toString()
+    val sb = StringBuilder()
 
-}
-
-fun extractText(e: Element, sb: StringBuilder): StringBuilder {
-    if (e is Text) {
-        val text = e
-        sb.append(text.text)
-    } else if (e is Container) {
-        val container = e
-        for (child in container.children) {
-            extractText(child, sb)
+    fun extractText(e: Element): StringBuilder {
+        if (e is Text) {
+            val text = e
+            sb.append(text.text)
+        } else if (e is Container) {
+            val container = e
+            for (child in container.children) {
+                extractText(child)
+            }
+        } else {
+            error("Unrecognized element : $e")
         }
-    } else {
-        error("Unrecognized element : $e")
+        return sb
     }
-    return sb
+
+    return extractText(this).toString()
+
 }
+
+
