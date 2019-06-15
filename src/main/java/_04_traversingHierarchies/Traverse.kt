@@ -23,23 +23,18 @@ fun main(args: Array<String>) {
 fun Element.extractText(): String {
     val sb = StringBuilder()
 
-    fun extractText(e: Element): StringBuilder {
-        if (e is Text) {
-            val text = e
-            sb.append(text.text)
-        } else if (e is Container) {
-            val container = e
-            for (child in container.children) {
-                extractText(child)
+    fun extractText(e: Element) {
+        when (e) {
+            is Text -> sb.append(e.text)
+            is Container -> {
+                e.children.forEach(::extractText)
             }
-        } else {
-            error("Unrecognized element : $e")
+            else -> error("Unrecognized element : $e")
         }
-        return sb
     }
 
-    return extractText(this).toString()
-
+    extractText(this)
+    return sb.toString()
 }
 
 
