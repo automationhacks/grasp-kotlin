@@ -1,10 +1,10 @@
 package _04_traversingHierarchies
 
-abstract class Element
+sealed class Element
 class Container(vararg val children: Element) : Element()
 class Text(val text: String) : Element()
 
-fun main(args: Array<String>) {
+fun main() {
     val root = Container(
             Text("a"),
             Container(
@@ -29,12 +29,9 @@ fun Element.extractText(): String {
             is Container -> {
                 e.children.forEach(::extractText)
             }
-            else -> error("Unrecognized element : $e")
         }
     }
 
     extractText(this)
     return sb.toString()
 }
-
-
