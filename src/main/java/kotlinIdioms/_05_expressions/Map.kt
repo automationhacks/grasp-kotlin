@@ -1,4 +1,4 @@
-package _05_expressions
+package kotlinIdioms._05_expressions
 
 fun main() {
     // Old Java way

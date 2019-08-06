@@ -1,4 +1,4 @@
-package _02_dataClasses
+package kotlinIdioms._02_dataClasses
 
 import org.testng.Assert
 

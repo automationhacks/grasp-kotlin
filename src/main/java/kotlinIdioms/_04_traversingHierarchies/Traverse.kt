@@ -1,4 +1,4 @@
-package _04_traversingHierarchies
+package kotlinIdioms._04_traversingHierarchies
 
 sealed class Element
 class Container(vararg val children: Element) : Element()

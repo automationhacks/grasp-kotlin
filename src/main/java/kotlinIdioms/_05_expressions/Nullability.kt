@@ -1,4 +1,4 @@
-package _05_expressions
+package kotlinIdioms._05_expressions
 
 fun readMeByChar(text: String?): String? {
     println(text?.length)

@@ -1,4 +1,4 @@
-package _06_lambdas
+package kotlinIdioms._06_lambdas
 
 inline fun repeat(times: Int, body: (Int) -> Unit) {
     for (index in 0 until times) {

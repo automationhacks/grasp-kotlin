@@ -1,4 +1,4 @@
-package _03_functions
+package kotlinIdioms._03_functions
 
 
 fun String.getFirstWord(separator: String = " "): String {

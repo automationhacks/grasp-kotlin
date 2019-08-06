@@ -1,4 +1,4 @@
-package _06_lambdas
+package kotlinIdioms._06_lambdas
 
 fun printHex() {
     val nums = (1..100).toList()

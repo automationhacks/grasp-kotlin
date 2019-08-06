@@ -1,4 +1,4 @@
-package _05_expressions
+package kotlinIdioms._05_expressions
 
 class Robot(val name: String, val function: String, val weight: Int)
 

@@ -1,4 +1,4 @@
-package _01_bean;
+package kotlinIdioms._01_bean;
 
 public class Person {
     private final String name;
