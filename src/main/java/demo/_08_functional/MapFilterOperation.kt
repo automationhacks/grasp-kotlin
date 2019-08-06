@@ -1,12 +1,12 @@
 package demo._08_functional
 
-fun printHex() {
+fun printEven() {
     val nums = (1..100).toList()
-    val list = mutableListOf<String>()
+    val list = mutableListOf<Int>()
 
     for (it in nums) {
-        if (it % 16 == 0) {
-            list.add("0x" + it.toString(16))
+        if (it % 2 == 0) {
+            list.add(it)
         }
     }
 
@@ -14,5 +14,5 @@ fun printHex() {
 }
 
 fun main() {
-    printHex()
+    printEven()
 }
