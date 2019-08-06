@@ -2,8 +2,8 @@ package demo._01_bean;
 
 
 public class Person {
-    private final Integer age;
-    private String name;
+    private final String name;
+    private Integer age;
 
     public Person(String name, Integer age) {
         this.name = name;
@@ -14,12 +14,12 @@ public class Person {
         return name;
     }
 
-    public void setName(String n) {
-        this.name = n;
-    }
-
     public Integer getAge() {
         return age;
+    }
+
+    public void setAge(Integer currentAge) {
+        this.age = currentAge;
     }
 }
 

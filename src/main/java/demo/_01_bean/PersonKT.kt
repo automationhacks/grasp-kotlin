@@ -13,11 +13,11 @@ class PersonKT {
         return name
     }
 
-    fun setName(n: String) {
-        name = n
-    }
-
     fun getAge(): Int {
         return age
+    }
+
+    fun setAge(newAge: Int) {
+        age = newAge
     }
 }
