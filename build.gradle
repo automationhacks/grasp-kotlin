@@ -14,19 +14,16 @@ repositories {
     jcenter()
 }
 
-// Uncomment below to enable testNG support
-task runTests(type: Test) {
-    useTestNG() {
-        parallel 'methods'
-        threadCount 3
-        includeGroups 'smoke'
-    }
+tasks.withType(Test) {
+    systemProperties = [
+            tag: System.getProperty('tag', 'foo')
+    ]
 }
 
-// Spek specific
 test {
-    useJUnitPlatform {
-        includeEngines 'spek2'
+    useTestNG() {
+        testLogging.showStandardStreams = true
+        includeGroups System.getProperty('tag', 'NONE')
     }
 }
 
@@ -44,10 +41,6 @@ dependencies {
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.40"
-
-    // Spek specific dependencies
-    testImplementation  "org.spekframework.spek2:spek-dsl-jvm:2.0.5"
-    testRuntime "org.spekframework.spek2:spek-runner-junit5:2.0.5"
     testRuntimeOnly "org.jetbrains.kotlin:kotlin-reflect:1.3.40"
 }
 
