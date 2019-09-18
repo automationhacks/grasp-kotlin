@@ -3,7 +3,7 @@ package testFrameworks.testNG.dataProviders
 import org.testng.annotations.DataProvider
 
 open class CalculatorBaseTest {
-    @DataProvider(name = "calculatorData")
+    @DataProvider(name = "calculatorData", parallel = true)
     fun calculatorData(): MutableIterator<Array<Int>> {
         val testData: ArrayList<Array<Int>> = arrayListOf()
 

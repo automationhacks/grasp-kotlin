@@ -11,14 +11,14 @@ class CalculatorTests : CalculatorBaseTest() {
         assertEquals(result, 11)
     }
 
-    @Test(dataProvider = "calculatorData", groups = ["calculator"])
+    @Test(dataProvider = "calculatorData", groups = ["calculator"], threadPoolSize = 2)
     fun testSumWithData(first: Int, second: Int) {
         val calculator = Calculator(first, second)
         val result = calculator.add()
         assertEquals(result, first.plus(second))
     }
 
-    @Test(dataProvider = "calculatorData")
+    @Test(dataProvider = "calculatorData", threadPoolSize = 2)
     fun testSubWithData(first: Int, second: Int) {
         val calculator = Calculator(first, second)
         val result = calculator.sub()
