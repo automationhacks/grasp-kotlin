@@ -20,7 +20,7 @@ tasks.withType(Test) {
     ]
 }
 
-test {
+task runTests(type : Test) {
     useTestNG() {
         testLogging.showStandardStreams = true
         includeGroups System.getProperty('tag', 'NONE')
