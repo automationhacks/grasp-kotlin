@@ -16,7 +16,8 @@ repositories {
 
 tasks.withType(Test) {
     systemProperties = [
-            tag: System.getProperty('tag', 'foo')
+            tag: System.getProperty('tag', 'NONE'),
+            maxFailureRetries : System.getProperty('maxFailureRetries', '2')
     ]
 }
 
