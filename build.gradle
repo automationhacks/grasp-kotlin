@@ -24,12 +24,13 @@ tasks.withType(Test) {
 task runTests(type : Test) {
     useTestNG() {
         testLogging.showStandardStreams = true
+        listeners << "testFrameworks.testNG.logging.Listener"
         includeGroups System.getProperty('tag', 'NONE')
     }
 }
 
 dependencies {
-    compile group: 'org.testng', name: 'testng', version: '6.8.8'
+    compile group: 'org.testng', name: 'testng', version: '7.1.0'
     compile group: 'postgresql', name: 'postgresql', version: '9.0-801.jdbc4'
     compile group: 'au.com.dius', name: 'pact-jvm-consumer_2.12', version: '3.6.7'
     compile group: 'com.opencsv', name: 'opencsv', version: '4.5'
