@@ -1,17 +1,23 @@
 package testFrameworks.testNG.setupTearDown
 
+import org.testng.ITestContext
 import org.testng.annotations.*
 
 open class BaseTest {
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     fun beforeSuite() {
         print("Before suite")
     }
 
-    @AfterSuite
+    @BeforeMethod(alwaysRun = true)
+    fun beforeMethodInBase(ctx: ITestContext) {
+        println("Before method in base class")
+        ctx.setAttribute("name", "foo")
+    }
+
+    @AfterSuite(alwaysRun = true)
     fun afterSuite() {
         print("After suite")
-
     }
 }
 
@@ -27,13 +33,16 @@ class CalculatorTest : BaseTest() {
     }
 
     @Test
-    fun add() {
+    fun add(ctx: ITestContext) {
+        ctx.setAttribute("name", "bar")
         print("A two nos")
+        println(ctx.getAttribute("name"))
     }
 
     @Test
-    fun addThree() {
+    fun addThree(ctx: ITestContext) {
         print("Add three nos")
+        println(ctx.getAttribute("name"))
     }
 
     @AfterMethod
