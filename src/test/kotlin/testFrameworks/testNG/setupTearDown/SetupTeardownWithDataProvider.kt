@@ -1,6 +1,7 @@
 package testFrameworks.testNG.setupTearDown
 
 import org.testng.Assert
+import org.testng.annotations.BeforeMethod
 import org.testng.annotations.DataProvider
 import org.testng.annotations.Test
 import java.util.concurrent.ThreadLocalRandom
@@ -15,7 +16,7 @@ class BookingNotFound(message: String) : Exception(message)
 
 class Booking {
     companion object {
-        private val bookingDB = hashMapOf<VehicleType, ArrayList<Int>>()
+        private val bookingDB = hashMapOf<VehicleType, ArrayList<String>>()
     }
 
     init {
@@ -23,31 +24,31 @@ class Booking {
         bookingDB[VehicleType.CAR_XL] = arrayListOf()
     }
 
-    fun makeBooking(type: VehicleType): Int {
-        val orderId = getRandomInt()
+    fun makeBooking(type: VehicleType): String {
+        val orderId = getRandomInt().toString()
         addBookingToDb(type, orderId)
 
         return orderId
     }
 
     private fun getRandomInt() = ThreadLocalRandom.current().nextInt(1, 1000)
-    private fun addBookingToDb(type: VehicleType, orderId: Int) {
+    private fun addBookingToDb(type: VehicleType, orderId: String) {
         bookingDB[type]?.add(orderId)
     }
 
-    fun cancelBooking(type: VehicleType, orderId: Int) {
+    fun cancelBooking(type: VehicleType, orderId: String) {
         val doesOrderExist = doesBookingExists(type, orderId)
         cancelBookingIfFound(doesOrderExist, orderId, type)
     }
 
 
-    fun doesBookingExists(type: VehicleType, orderId: Int): Boolean? {
+    fun doesBookingExists(type: VehicleType, orderId: String): Boolean? {
         return bookingDB[type]?.contains(orderId)
     }
 
     private fun cancelBookingIfFound(
         doesOrderExist: Boolean?,
-        orderId: Int,
+        orderId: String,
         type: VehicleType
     ) {
         if (doesOrderExist == null) {
@@ -60,6 +61,10 @@ class Booking {
 }
 
 class SetupTeardownWithDataProvider {
+    private lateinit var vehicleType: VehicleType
+    private lateinit var orderId: String
+    private val booking = Booking()
+
     @DataProvider
     fun getVehicleTypes(): MutableIterator<Array<Any>> {
         val vehicles = arrayListOf<Array<Any>>()
@@ -70,22 +75,20 @@ class SetupTeardownWithDataProvider {
         return vehicles.iterator()
     }
 
+    @BeforeMethod
+    fun givenBookingIsCreated(testParams: Array<Any>) {
+        val vehicleType = testParams[0] as VehicleType
+        orderId = booking.makeBooking(vehicleType)
+    }
+
     @Test(dataProvider = "getVehicleTypes")
     fun testBookingCreation(vehicleType: VehicleType) {
-        val booking = Booking()
-        val orderId = booking.makeBooking(vehicleType)
-
         val isBookingCreated = booking.doesBookingExists(vehicleType, orderId)
         Assert.assertNotNull(isBookingCreated)
     }
 
-    @Test
-    fun testBookingCancellation() {
-        val vehicleType = VehicleType.CAR_XL
-
-        val booking = Booking()
-        val orderId = booking.makeBooking(vehicleType)
-
+    @Test(dataProvider = "getVehicleTypes")
+    fun testBookingCancellation(vehicleType: VehicleType) {
         val isBookingCreated = booking.doesBookingExists(vehicleType, orderId)
         Assert.assertNotNull(isBookingCreated)
 
