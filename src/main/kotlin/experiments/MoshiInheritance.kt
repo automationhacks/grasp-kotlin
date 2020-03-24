@@ -14,12 +14,13 @@ abstract class Parent {
 }
 
 data class Child(
-        @Json(name = "snake_foo") override val foo: String,
-        val bar: List<String>) : Parent()
+    @Json(name = "snake_foo") override val foo: String,
+    val bar: List<String>
+) : Parent()
 
 data class AnotherChild(
-        @Json(name = "snake_foo") override val foo: String,
-        val bar: String
+    @Json(name = "snake_foo") override val foo: String,
+    val bar: String
 ) : Parent()
 
 fun <T : Parent> someFunc(something: T) {
