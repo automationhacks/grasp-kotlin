@@ -71,8 +71,8 @@ class LambdaTest {
 
     @Test
     fun destructuringInLambdas() {
-
-
+        val map = mapOf("Germany" to "Berlin", "India" to "Delhi")
+        map.forEach { (key, value) -> println("$key: $value}") }
     }
 
 }
