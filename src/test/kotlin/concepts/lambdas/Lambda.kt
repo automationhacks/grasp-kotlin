@@ -51,16 +51,28 @@ class LambdaTest {
         val numbers = (1..100)
 
         // Using return@filter we can return from the lambda early
-        numbers.filter {
+        println(numbers.filter {
             val shouldReturn = it > 50
             return@filter shouldReturn
-        }
+        })
 
         // If no return is specified, last expressions value is assumed as the default return value
-        numbers.filter {
+        println(numbers.filter {
             val shouldReturn = it < 40
             shouldReturn
-        }
+        })
+    }
+
+    @Test
+    fun unusedLambdaParamsCanBeReplacedWithUnderscores() {
+        val map = mapOf("Germany" to "Berlin", "India" to "Delhi")
+        map.forEach { (_, value) -> println(value) }
+    }
+
+    @Test
+    fun destructuringInLambdas() {
+
 
     }
+
 }
