@@ -71,8 +71,26 @@ class LambdaTest {
 
     @Test
     fun destructuringInLambdas() {
+        // If lambda has a param of Pair or Map.Entry type then we can use destructuring declaration syntax
+        // https://kotlinlang.org/docs/reference/multi-declarations.html#destructuring-in-lambdas-since-11
         val map = mapOf("Germany" to "Berlin", "India" to "Delhi")
         map.forEach { (key, value) -> println("$key: $value}") }
     }
+
+    @Test
+    fun anonymousFunctionSyntax() {
+        // return statement inside anonymous function would return from this
+        // whereas return statement inside lambda expression would return from the enclosing function
+        val numbers = (1..1000)
+        println(numbers.filter(fun(num) = num > 990))
+    }
+
+    @Test
+    fun functionLiteralsWithReceiver() {
+        // https://kotlinlang.org/docs/reference/lambdas.html#function-literals-with-receiver
+        val sum: Int.(Int) -> Int = { other -> plus(other) }
+        val anotherSum = fun Int.(other: Int): Int = this + other
+    }
+
 
 }
