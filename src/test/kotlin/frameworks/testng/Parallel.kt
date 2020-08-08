@@ -24,4 +24,11 @@ class Parallel {
         println("Executing foobar...")
         Assert.assertEquals(2, 2)
     }
+
+    @Test(groups = ["not_picked"], alwaysRun = true)
+    fun foobarDontPick() {
+        Thread.sleep(2000)
+        println("Executing foobar...")
+        Assert.assertEquals(2, 2)
+    }
 }
