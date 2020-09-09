@@ -24,9 +24,9 @@ tasks.withType(Test) {
 task runTests(type : Test) {
     useTestNG() {
         testLogging.showStandardStreams = true
-        listeners << "frameworks.testng.logging.Listener"
-        parallel = "methods"
-        threadCount = 3
+//        listeners << "frameworks.testng.logging.Listener"
+//        parallel = "methods"
+//        threadCount = 10
         includeGroups System.getProperty('tag', 'NONE')
     }
 }

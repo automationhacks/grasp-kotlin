@@ -1,30 +1,49 @@
 package frameworks.testng.parallel
 
+import org.testng.Assert
+import org.testng.annotations.DataProvider
 import org.testng.annotations.Test
 
+@Test(groups = ["parallel"])
 class ParallelTests {
-    @Test(groups = ["hello"])
     fun testOne() {
         print(Thread.currentThread().id);
     }
 
-    @Test
     fun testSecond() {
         print(Thread.currentThread().id);
     }
 
-    @Test
     fun testThree() {
         print(Thread.currentThread().id);
     }
 
-    @Test
     fun testFour() {
         print(Thread.currentThread().id);
     }
 
-    @Test
     fun testFive() {
         print(Thread.currentThread().id);
+    }
+}
+
+@Test(groups = ["parallel"])
+class ParallelTestWithDataProvider {
+
+    @DataProvider()
+    fun nos(): MutableIterator<Array<Any>> {
+        val data = arrayListOf<Array<Any>>()
+
+        for (num in 1..10000) {
+            data.add(arrayOf(num, num + 1, (num * 2) + 1))
+        }
+
+        return data.iterator()
+    }
+
+
+    @Test(dataProvider = "nos")
+    fun calculateSum(first: Int, second: Int, expected: Int) {
+        Assert.assertEquals(first + second, expected)
     }
 }

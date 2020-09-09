@@ -35,19 +35,22 @@ class Listener : TestListenerAdapter() {
 
     override fun onTestStart(result: ITestResult) {
         super.onTestStart(result)
-        Logger.log("===>>> Test started: ${result.name}")
+        Logger.log("")
+        Logger.log(">>> Test started: ${result.name}")
     }
 
     override fun onTestSuccess(result: ITestResult?) {
         super.onTestSuccess(result)
         if (result != null) {
-            Logger.log("<<<=== Test completed successfully: ${result.name}")
+            Logger.log("")
+            Logger.log("<<< Test completed successfully: ${result.name}")
         }
     }
 
     override fun onTestFailure(result: ITestResult) {
         super.onTestFailure(result)
-        Logger.log("<<<=== Test failed: ${result.name}")
+        Logger.log("")
+        Logger.log("<<< Test failed: ${result.name}")
     }
 
     override fun onTestFailedButWithinSuccessPercentage(result: ITestResult?) {}
